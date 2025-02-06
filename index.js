@@ -34,7 +34,7 @@ export default [
     },
   },
   reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
+  reactPlugin.configs.flat["jsx-runtime"],
   {
     plugins: { react: reactPlugin },
     rules: {
@@ -43,4 +43,12 @@ export default [
   },
   ...tailwind.configs["flat/recommended"],
   ...compat.extends("plugin:react-hooks/recommended"),
+  {
+    rules: {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { varsIgnorePattern: "React" },
+      ],
+    },
+  },
 ];
